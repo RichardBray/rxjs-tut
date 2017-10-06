@@ -8,12 +8,14 @@ let htmlOptions = {
 
 module.exports = {
   entry: './src/app/app.js',
+  devtool: 'cheap-module-source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
+    sourceMapFilename: '[name].map',
     filename: 'bundle.js'
   },
   plugins: [
-    new UglifyJSPlugin(),
+    // new UglifyJSPlugin({ sourceMap: true }),
     new HtmlWebpackPlugin(htmlOptions)
   ],
   devServer: {

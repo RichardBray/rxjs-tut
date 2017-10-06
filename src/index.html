@@ -4,18 +4,58 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <style>
-    .print-here {
-      box-shadow: 10px 10px 5px #888888;
-      background-color: #ccc;
-      display: block;
-      margin: auto;
-      width: 300px;
-      height: 300px
-    }
+  body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    background: linear-gradient(to bottom, #dbe6ed, #cfdde5);
+  }
+
+  *, *:before, *:after {
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .print-here {
+    height: 50vmin;
+    width: 90vmin;
+    background-color: white;
+    background-size: cover;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+  }
+  .print-here:before, .print-here:after {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 2px;
+    width: 2px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    -webkit-filter: blur(1px);
+            filter: blur(1px);
+  }
+
   </style>
 </head>
 <body>
-  <h1>Rxjs Test</h1>
-  <section class="print-here"></section>
+  <section class="print-here">
+    Messing around with RxJs using this tutorial <br>
+    <a href="https://css-tricks.com/animated-intro-rxjs/">https://css-tricks.com/animated-intro-rxjs/</a>
+  </section>
 </body>
 </html>
